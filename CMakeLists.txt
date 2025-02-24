@@ -25,7 +25,10 @@ find_package(VTK REQUIRED COMPONENTS
   RenderingOpenGL2)
 message(STATUS "========> ${VTK_LIBRARIES}")
 
-add_executable(${PROJECT_NAME} main.cpp tutorial2.cpp tutorial3.cpp)
+add_executable(${PROJECT_NAME} main.cpp
+  tutorial4.cpp
+  tutorial3.cpp
+  tutorial2.cpp)
 target_link_libraries(${PROJECT_NAME} PRIVATE ${VTK_LIBRARIES} spdlog::spdlog)
 
 vtk_module_autoinit(

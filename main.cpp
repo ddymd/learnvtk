@@ -1,8 +1,9 @@
 void vtktutorial2();
-void vtktutorial3();
-
+void tutorial3();
+void vtktutorial4();
 int main() {
     // vtktutorial2();
-    vtktutorial3();
+    // tutorial3();
+    vtktutorial4();
     return 0;
 }
