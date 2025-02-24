@@ -13,7 +13,16 @@ endif()
 
 find_package(spdlog CONFIG REQUIRED)
 
-find_package(VTK REQUIRED)
+find_package(VTK REQUIRED COMPONENTS
+  CommonColor
+  CommonCore
+  FiltersSources
+  InteractionStyle
+  RenderingContextOpenGL2
+  RenderingCore
+  RenderingFreeType
+  RenderingGL2PSOpenGL2
+  RenderingOpenGL2)
 message(STATUS "========> ${VTK_LIBRARIES}")
 
 add_executable(${PROJECT_NAME} main.cpp tutorial2.cpp)
