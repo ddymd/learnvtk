@@ -26,6 +26,7 @@ find_package(VTK REQUIRED COMPONENTS
 message(STATUS "========> ${VTK_LIBRARIES}")
 
 add_executable(${PROJECT_NAME} main.cpp
+  tutorial5.cpp
   tutorial4.cpp
   tutorial3.cpp
   tutorial2.cpp)
