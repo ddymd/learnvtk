@@ -16,8 +16,10 @@ find_package(spdlog CONFIG REQUIRED)
 find_package(VTK REQUIRED COMPONENTS
   CommonColor
   CommonCore
+  CommonTransforms
   FiltersSources
   InteractionStyle
+  InteractionWidgets
   RenderingContextOpenGL2
   RenderingCore
   RenderingFreeType
@@ -26,6 +28,7 @@ find_package(VTK REQUIRED COMPONENTS
 message(STATUS "========> ${VTK_LIBRARIES}")
 
 add_executable(${PROJECT_NAME} main.cpp
+  tutorial6.cpp
   tutorial5.cpp
   tutorial4.cpp
   tutorial3.cpp
