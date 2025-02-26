@@ -1,13 +1,8 @@
-void vtktutorial2();
-void tutorial3();
-void vtktutorial4();
-void vtktutorial5();
-void vtktutorial6();
+void DistanceBetweenPoints();
+void DistancePointToLine();
+
 int main() {
-    // vtktutorial2();
-    // tutorial3();
-    // vtktutorial4();
-    // vtktutorial5();
-    vtktutorial6();
+    DistanceBetweenPoints();
+    DistancePointToLine();
     return 0;
 }
