@@ -1,6 +1,6 @@
-void CameraPosition();
+void BlankPoint();
 
 int main() {
-    CameraPosition();
+    BlankPoint();
     return 0;
 }
