@@ -1,0 +1,73 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {"major": 3, "minor": 25, "patch": 0},
+    "include": [],
+    "vendor": {},
+    "configurePresets":[
+        {
+            "name": "msvc",
+            "description": "Use MSVC with Visual Studio 2022",
+            "generator": "Visual Studio 17 2022",
+            "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+            "binaryDir": "${sourceDir}/build/msvc",
+            "installDir": "{sourceDir}/build/msvc/install",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            },
+            "architecture": {
+                "value": "x64"
+            },
+            "environment": {
+                "Ceres_DIR": "${sourceDir}/3rdbuild/ceres",
+                "glog_DIR": "${sourceDir}/3rdbuild/glog"
+            }
+        },
+        {
+            "name": "default",
+            "description": "A configure presets for Ninja(RelWithDebInfo)",
+            "generator": "Ninja",
+            "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+            "binaryDir": "${sourceDir}/build",
+            "installDir": "{sourceDir}/build/install",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            },
+            "environment": {
+                "OpenMP_ROOT": "$env{LLVM_LIB_DIR}",
+                "Ceres_DIR": "${sourceDir}/3rdbuild/ceres",
+                "glog_DIR": "${sourceDir}/3rdbuild/glog"
+            }
+        }
+    ],
+
+    "buildPresets": [
+        {"name" : "msvc", "configurePreset": "msvc", "jobs": 16, "cleanFirst": true},
+        {"name" : "default", "configurePreset": "default", "jobs": 16, "cleanFirst": false}
+    ],
+
+    "testPresets": [
+        {"name": "msvc", "configurePreset": "msvc"},
+        {"name": "default", "configurePreset": "default"}
+    ],
+
+    "packagePresets": [],
+
+    "workflowPresets": [
+        {
+            "name": "msvc",
+            "steps": [
+                {"type":"configure", "name":"msvc"},
+                {"type":"build", "name":"msvc"}
+            ]
+        },
+        {
+            "name": "default",
+            "steps": [
+                {"type":"configure", "name":"default"},
+                {"type":"build", "name":"default"}
+            ]
+        }
+    ]
+}

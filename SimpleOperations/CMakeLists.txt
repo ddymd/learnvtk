@@ -15,14 +15,14 @@ find_package(spdlog CONFIG REQUIRED)
 find_package(VTK REQUIRED COMPONENTS CommonCore CommonDataModel)
 
 add_executable(${PROJECT_NAME} main.cpp
-  CameraPosition.cpp
-  # DistancePointToLine.cpp
-  # FloatingPointExceptions.cpp
-  # GaussianRandomNumber.cpp
-  # PerspectiveTransform.cpp
-  # ProjectPointPlane.cpp
-  # RandomSequence.cpp
-  # UniformRandomNumber.cpp
+  DistanceBetweenPoints.cpp
+  DistancePointToLine.cpp
+  FloatingPointExceptions.cpp
+  GaussianRandomNumber.cpp
+  PerspectiveTransform.cpp
+  ProjectPointPlane.cpp
+  RandomSequence.cpp
+  UniformRandomNumber.cpp
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE ${VTK_LIBRARIES} spdlog::spdlog)
 

@@ -1,8 +1,6 @@
-void DistanceBetweenPoints();
-void DistancePointToLine();
+void CameraPosition();
 
 int main() {
-    DistanceBetweenPoints();
-    DistancePointToLine();
+    CameraPosition();
     return 0;
 }
