@@ -26,13 +26,9 @@ find_package(VTK REQUIRED COMPONENTS
 
 add_executable(${PROJECT_NAME} main.cpp
   BlankPoint.cpp
-  # DistancePointToLine.cpp
-  # FloatingPointExceptions.cpp
-  # GaussianRandomNumber.cpp
-  # PerspectiveTransform.cpp
-  # ProjectPointPlane.cpp
-  # RandomSequence.cpp
-  # UniformRandomNumber.cpp
+  GetLinearPointId.cpp
+  SGrid.cpp
+  StructuredGrid.cpp
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE ${VTK_LIBRARIES} spdlog::spdlog)
 
