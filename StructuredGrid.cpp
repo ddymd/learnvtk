@@ -77,14 +77,14 @@ void StructuredGrid() {
     it->Delete();
 
     auto out = fmt::memory_buffer();
-    fmt::format_to(std::back_inserter(out), "Cells and their points");
+    fmt::format_to(std::back_inserter(out), "Cells and their points\n");
     for (auto const& cell: cellPointIds) {
         fmt::format_to(std::back_inserter(out), "Cell Id: {} Point Ids: ", cell.first);
         for (auto id = cell.second.begin(); id != cell.second.end(); ++id) {
             if (id != std::prev(cell.second.end())) {
                 fmt::format_to(std::back_inserter(out), "{}, ", *id);
             } else {
-                fmt::format_to(std::back_inserter(out), "{}", *id);
+                fmt::format_to(std::back_inserter(out), "{}\n", *id);
             }
         }
     }
@@ -98,7 +98,7 @@ void StructuredGrid() {
             commonPointIds[pointId].insert(cell.first);
         }
     }
-    fmt::format_to(std::back_inserter(out), "Point Ids shared between cells");
+    fmt::format_to(std::back_inserter(out), "Point Ids shared between cells\n");
     for (auto point = commonPointIds.begin(); point != commonPointIds.end(); ++point) {
         if (point->second.size() > 1) {
             fmt::format_to(std::back_inserter(out), "Point Id: {} CellIds: ", point->first);
@@ -106,7 +106,7 @@ void StructuredGrid() {
                 if (cellId != std::prev(point->second.end())) {
                     fmt::format_to(std::back_inserter(out), "{}, ", *cellId);
                 } else {
-                    fmt::format_to(std::back_inserter(out), "{}", *cellId);
+                    fmt::format_to(std::back_inserter(out), "{}\n", *cellId);
                 }
             }
         }
