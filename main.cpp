@@ -2,11 +2,17 @@ void BlankPoint();
 void GetLinearPointId();
 void SGrid();
 void StructuredGrid();
+void StructuredGridOutline();
+void VisualizeStructuredGrid();
+void VisualizeStructuredGridCells();
 
 int main() {
     // BlankPoint();
-    GetLinearPointId();
+    // GetLinearPointId();
     // SGrid();
-    StructuredGrid();
+    // StructuredGrid();
+    // StructuredGridOutline();
+    // VisualizeStructuredGrid();
+    VisualizeStructuredGridCells();
     return 0;
 }

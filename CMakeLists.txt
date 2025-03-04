@@ -17,6 +17,7 @@ find_package(VTK REQUIRED COMPONENTS
   CommonCore
   CommonDataModel
   FiltersGeometry
+  FiltersSources
   InteractionStyle
   RenderingContextOpenGL2
   RenderingCore
@@ -29,6 +30,9 @@ add_executable(${PROJECT_NAME} main.cpp
   GetLinearPointId.cpp
   SGrid.cpp
   StructuredGrid.cpp
+  StructuredGridOutline.cpp
+  VisualizeStructuredGrid.cpp
+  VisualizeStructuredGridCells.cpp
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE ${VTK_LIBRARIES} spdlog::spdlog)
 

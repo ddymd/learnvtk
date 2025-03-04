@@ -24,6 +24,8 @@
 #include <vtkLookupTable.h>
 #include <vtkCamera.h>
 
+#define USE_POINT_DATA
+
 void StructuredGrid() {
     vtkNew<vtkNamedColors> colors;
     size_t nx = 2, ny = 3, nz = 2;
@@ -112,7 +114,7 @@ void StructuredGrid() {
         }
     }
     SPDLOG_INFO("{}", fmt::to_string(out));
-
+#if defined (USE_POINT_DATA)
     // use the point data
     // map the scalar values in the image to colors with a lookup table
     vtkNew<vtkLookupTable> lut;
@@ -124,8 +126,22 @@ void StructuredGrid() {
     mapper->SetInputData(structuredGrid);
     mapper->SetLookupTable(lut);
     mapper->SetScalarRange(0, dataSize-1);
-    mapper->ScalarVisibilityOn();
-
+    // mapper->ScalarVisibilityOn();
+#else
+    // use the cell data
+    vtkNew<vtkLookupTable> lut;
+    lut->SetNumberOfTableValues(numberOfCells);
+    lut->Build();
+    // assign some specific colors in this case
+    lut->SetTableValue(0, colors->GetColor4d("Red").GetData());
+    lut->SetTableValue(numberOfCells-1, colors->GetColor4d("Banana").GetData());
+    // create a mapper and actor
+    vtkNew<vtkDataSetMapper> mapper;
+    mapper->SetInputData(structuredGrid);
+    mapper->SetLookupTable(lut);
+    mapper->SetScalarRange(0, numberOfCells-1);
+    // mapper->ScalarVisibilityOff();
+#endif
 
     vtkNew<vtkActor> actor;
     actor->SetMapper(mapper);
