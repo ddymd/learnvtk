@@ -1,18 +1,8 @@
-void BlankPoint();
-void GetLinearPointId();
-void SGrid();
-void StructuredGrid();
-void StructuredGridOutline();
-void VisualizeStructuredGrid();
-void VisualizeStructuredGridCells();
+void StructuredPointsToUnstructuredGrid();
+void Vol();
 
 int main() {
-    // BlankPoint();
-    // GetLinearPointId();
-    // SGrid();
-    // StructuredGrid();
-    // StructuredGridOutline();
-    // VisualizeStructuredGrid();
-    VisualizeStructuredGridCells();
+    StructuredPointsToUnstructuredGrid();
+    Vol();
     return 0;
 }

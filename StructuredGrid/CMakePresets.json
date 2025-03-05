@@ -1,0 +1,40 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {"major": 3, "minor": 25, "patch": 0},
+    "include": [],
+    "vendor": {},
+    "configurePresets":[
+        {
+            "name": "default",
+            "description": "A configure presets for Ninja(RelWithDebInfo)",
+            "generator": "Ninja",
+            "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+            "binaryDir": "${sourceDir}/build",
+            "installDir": "{sourceDir}/build/install",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            }
+        }
+    ],
+
+    "buildPresets": [
+        {"name" : "default", "configurePreset": "default", "jobs": 16, "cleanFirst": false}
+    ],
+
+    "testPresets": [
+        {"name": "default", "configurePreset": "default"}
+    ],
+
+    "packagePresets": [],
+
+    "workflowPresets": [
+        {
+            "name": "default",
+            "steps": [
+                {"type":"configure", "name":"default"},
+                {"type":"build", "name":"default"}
+            ]
+        }
+    ]
+}
