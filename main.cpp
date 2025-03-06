@@ -1,8 +1,6 @@
-void StructuredPointsToUnstructuredGrid();
-void Vol();
+void AlphaFrequency();
 
 int main() {
-    StructuredPointsToUnstructuredGrid();
-    Vol();
+    AlphaFrequency();
     return 0;
 }
