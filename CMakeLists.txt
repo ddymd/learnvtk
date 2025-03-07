@@ -19,7 +19,9 @@ find_package(VTK REQUIRED COMPONENTS
   IOXML
   FiltersGeometry
   FiltersSources
+  FiltersModeling
   InteractionStyle
+  RenderingAnnotation
   RenderingContextOpenGL2
   RenderingCore
   RenderingFreeType
@@ -28,6 +30,8 @@ find_package(VTK REQUIRED COMPONENTS
 
 add_executable(${PROJECT_NAME} main.cpp
   AlphaFrequency.cpp
+  AnnotatedCubeActor.cpp
+  Arbitrary3DCursor.cpp
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE ${VTK_LIBRARIES} spdlog::spdlog)
 

@@ -6,13 +6,13 @@
     "configurePresets":[
         {
             "name": "default",
-            "description": "A configure presets for Ninja(RelWithDebInfo)",
+            "description": "A configure presets for Ninja(Release)",
             "generator": "Ninja",
             "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
             "binaryDir": "${sourceDir}/build",
-            "installDir": "{sourceDir}/build/install",
+            "installDir": "${sourceDir}/build/install",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "CMAKE_BUILD_TYPE": "Release",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
             }
         }
