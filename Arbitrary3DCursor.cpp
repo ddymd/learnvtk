@@ -134,5 +134,16 @@ void Arbitrary3DCursor(int argc, char** argv) {
     // add the actors to the renderer, set the background and size
     ren1->GradientBackgroundOn();
     ren1->SetBackground(colors->GetColor3d("SlateGray").GetData());
+    ren1->SetBackground2(colors->GetColor3d("Wheat").GetData());
 
+    renWin->SetSize(300, 300);
+    renWin->SetWindowName("Arbitrary3DCursor");
+    renWin->Render();
+    pointWidget->On();
+
+    // render the image
+    iren->Initialize();
+    renWin->Render();
+
+    iren->Start();
 }

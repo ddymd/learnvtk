@@ -20,7 +20,9 @@ find_package(VTK REQUIRED COMPONENTS
   FiltersGeometry
   FiltersSources
   FiltersModeling
+  FiltersCore
   InteractionStyle
+  InteractionWidgets
   RenderingAnnotation
   RenderingContextOpenGL2
   RenderingCore
@@ -32,6 +34,7 @@ add_executable(${PROJECT_NAME} main.cpp
   AlphaFrequency.cpp
   AnnotatedCubeActor.cpp
   Arbitrary3DCursor.cpp
+  AssignCellColorsFromLUT.cpp
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE ${VTK_LIBRARIES} spdlog::spdlog)
 
