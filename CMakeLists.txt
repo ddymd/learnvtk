@@ -35,6 +35,7 @@ add_executable(${PROJECT_NAME} main.cpp
   AnnotatedCubeActor.cpp
   Arbitrary3DCursor.cpp
   AssignCellColorsFromLUT.cpp
+  AxisActor.cpp
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE ${VTK_LIBRARIES} spdlog::spdlog)
 
