@@ -21,8 +21,10 @@ find_package(VTK REQUIRED COMPONENTS
   FiltersSources
   FiltersModeling
   FiltersCore
+  FiltersGeneral
   InteractionStyle
   InteractionWidgets
+  ImagingHybrid
   RenderingAnnotation
   RenderingContextOpenGL2
   RenderingCore
@@ -36,6 +38,10 @@ add_executable(${PROJECT_NAME} main.cpp
   Arbitrary3DCursor.cpp
   AssignCellColorsFromLUT.cpp
   AxisActor.cpp
+  BackfaceCulling.cpp
+  BackgroundColor.cpp
+  BackgroundGradient.cpp
+  BackgroundTexture.cpp
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE ${VTK_LIBRARIES} spdlog::spdlog)
 
