@@ -17,11 +17,13 @@ find_package(VTK REQUIRED COMPONENTS
   CommonCore
   CommonDataModel
   IOXML
+  IOLegacy
   FiltersGeometry
   FiltersSources
   FiltersModeling
   FiltersCore
   FiltersGeneral
+  FiltersHybrid
   InteractionStyle
   InteractionWidgets
   ImagingHybrid
@@ -42,6 +44,8 @@ add_executable(${PROJECT_NAME} main.cpp
   BackgroundColor.cpp
   BackgroundGradient.cpp
   BackgroundTexture.cpp
+  BillboardTextActor3D.cpp
+  BlobbyLogo.cpp
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE ${VTK_LIBRARIES} spdlog::spdlog)
 
