@@ -9,6 +9,7 @@ void BackgroundGradient();
 void BackgroundTexture();
 void BillboardTextActor3D();
 void BlobbyLogo(int argc, char** argv);
+void Blow(int argc, char** argv);
 
 int main(int argc, char** argv) {
     // AlphaFrequency(argc, argv);
@@ -21,6 +22,7 @@ int main(int argc, char** argv) {
     // BackgroundGradient();
     // BackgroundTexture();
     // BillboardTextActor3D();
-    BlobbyLogo(argc, argv);
+    // BlobbyLogo(argc, argv);
+    Blow(argc, argv);
     return 0;
 }

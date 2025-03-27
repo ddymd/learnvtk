@@ -46,6 +46,7 @@ add_executable(${PROJECT_NAME} main.cpp
   BackgroundTexture.cpp
   BillboardTextActor3D.cpp
   BlobbyLogo.cpp
+  Blow.cpp
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE ${VTK_LIBRARIES} spdlog::spdlog)
 
